@@ -6,3 +6,49 @@
 
 This project is an example demonstrating how the Flywork framework works.
 
+## Default Namespace
+
+The default application namespace should be "App\\", which allows Composer to handle classes correctly.
+
+## Minimal File Structure
+
+* /public
+  * /bundles
+  * .htaccess
+  * index.php
+* /src
+  * /Controllers
+  * /Models
+  * /Views
+* /writable
+
+### Folders explaining
+
+#### /public
+&nbsp; &nbsp; You should put web assets (css, js, img, etc) in this folder. Organize it as you want.<br>
+&nbsp; &nbsp; The files ```.htaccess``` and ```index.php``` are essential to run the application.
+
+#### /public/bundles
+
+&nbsp; &nbsp; Contains all generated bundles (combination of files - CSS or JS)
+
+#### /src
+
+&nbsp; &nbsp; Contains application source code.
+
+#### /src/Controllers
+
+&nbsp; &nbsp; Contains application controllers.
+
+#### /src/Models
+
+&nbsp; &nbsp; Contains applications models, which handles database entities.
+
+#### /src/Views
+
+&nbsp; &nbsp; Contains all application views (you can organize it in subfolders).
+
+#### /writable
+
+&nbsp; &nbsp; This folder is necessary to put all files which is written by framework.<br>
+&nbsp; &nbsp; Should contains ```cache``` and ```upload``` subfolders.
