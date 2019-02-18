@@ -20,7 +20,7 @@ abstract class ApplicationController extends Controller
     {
         $user = $this->session->get('user');
         $this->is_logged = !empty($user);
-        $this->is_admin = !empty($user) && isset($user['admin']) && $user['admin'];
+        $this->is_admin = $this->is_logged && isset($user['admin']) && $user['admin'];
 
         parent::prepare_controller();
     }
