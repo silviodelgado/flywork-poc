@@ -8,7 +8,7 @@ This project is an example demonstrating how the Flywork framework works.
 
 ## Default Namespace
 
-The default application namespace should be "App\\", which allows Composer to handle classes correctly.
+The default application namespace should be "App\\", which allows Composer and PSR-4 to handle classes correctly.
 
 ## Minimal File Structure
 
@@ -22,7 +22,7 @@ The default application namespace should be "App\\", which allows Composer to ha
   * /Views
 * /writable
 
-### Folders explaining
+### Folders and root files explaining
 
 #### /public
 &nbsp; &nbsp; You should put web assets (css, js, img, etc) in this folder. Organize it as you want.<br>
@@ -52,3 +52,11 @@ The default application namespace should be "App\\", which allows Composer to ha
 
 &nbsp; &nbsp; This folder is necessary to put all files which is written by framework.<br>
 &nbsp; &nbsp; Should contains ```cache``` and ```upload``` subfolders.
+
+#### /composer.json
+
+&nbsp; &nbsp; Main composer application file.
+
+#### /flywork.sql
+
+&nbsp; &nbsp; Sample database script.
