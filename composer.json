@@ -1,0 +1,21 @@
+{
+    "name": "interart/flywork-poc",
+    "description": "Flywork Proof of Concept project",
+    "version": "1.0.0",
+    "type": "project",
+    "authors": [{
+        "name": "Silvio Delgado",
+        "email": "silviomdelgado@gmail.com",
+        "homepage": "https://www.silviodelgado.net",
+        "role": "Architect/Developer"
+    }],
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src"
+        }
+    },
+    "require": {
+        "interart/flywork": "dev-master"
+    }
+}
