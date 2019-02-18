@@ -38,7 +38,11 @@ The default application namespace should be "App\\", which allows Composer and P
 
 #### /src/Controllers
 
-&nbsp; &nbsp; Contains application controllers.
+&nbsp; &nbsp; Contains all application controllers.
+
+#### /src/Controllers/Rest
+
+&nbsp; &nbsp; Contains all RESTful controllers.
 
 #### /src/Models
 
