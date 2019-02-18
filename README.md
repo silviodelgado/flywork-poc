@@ -8,7 +8,7 @@ This project is an example showing how the Flywork framework works.
 
 ## Default Namespace
 
-The default application namespace should be "App\\", which allows Composer and PSR-4 to handle classes correctly.
+The default application namespace should be "App\\", which allows Composer and PSR-4 to correctly handle classes.
 
 ## Minimal File Structure
 
