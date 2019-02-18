@@ -4,7 +4,7 @@
 
 [Flywork Framework](https://github.com/silviodelgado/flywork) - Proof of Concept Project
 
-This project is an example demonstrating how the Flywork framework works.
+This project is an example showing how the Flywork framework works.
 
 ## Default Namespace
 
