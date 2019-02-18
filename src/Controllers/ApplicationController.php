@@ -2,15 +2,15 @@
 
 namespace App\Controllers;
 
-use Interart\Flywork\Traits\BundleManager;
 use Interart\Flywork\Controllers\Controller;
+use Interart\Flywork\Traits\BundleManager;
 
 abstract class ApplicationController extends Controller
 {
     use BundleManager;
 
     protected $need_auth = true;
-    
+
     public function __construct()
     {
         parent::__construct();
@@ -18,7 +18,9 @@ abstract class ApplicationController extends Controller
 
     protected function prepare_controller()
     {
-        $this->is_logged = !empty($this->session->get('user'));
+        $user = $this->session->get('user');
+        $this->is_logged = !empty($user);
+        $this->is_admin = !empty($user) && isset($user['admin']) && $user['admin'];
 
         parent::prepare_controller();
     }
@@ -27,5 +29,11 @@ abstract class ApplicationController extends Controller
     {
         $this->session->flash('error', 'You\'re not logged in or your session has expired.');
         return $this->redirect("/login?returnUrl=" . urlencode(filter_input(INPUT_SERVER, 'REQUEST_URI')));
+    }
+
+    protected function handle_not_administrator()
+    {
+        $this->session->flash('error', 'You do not have permission to access this module.');
+        return $this->redirect('/');
     }
 }
