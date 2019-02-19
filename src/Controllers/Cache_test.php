@@ -58,7 +58,7 @@ class Cache_test extends ApplicationController
     
     public function remove()
     {
-        $this->cache->remove('fruits');
+        $this->cache->delete('fruits');
 
         echo '<p><a href="/cache-test">Add Cache</a></p>';
     }
