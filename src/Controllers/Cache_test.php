@@ -13,6 +13,7 @@ class Cache_test extends ApplicationController
         'orange',
         'avocado',
     ];
+    protected $cache;
 
     public function __construct()
     {
@@ -20,20 +21,19 @@ class Cache_test extends ApplicationController
 
         parent::__construct();
 
+        $this->cache = new Cache();
     }
 
     public function index()
     {
-        $cache = new Cache();
-        
         echo '$this->fruits';
         var_dump($this->fruits);
         
-        $cache->save('fruits', $this->fruits);
+        $this->cache->save('fruits', $this->fruits);
         
         sort($this->fruits);
         
-        $fruits = $cache->get('fruits');
+        $fruits = $this->cache->get('fruits');
         
         echo '<hr>';
         echo '$this->fruits sorted';
@@ -47,18 +47,18 @@ class Cache_test extends ApplicationController
     
     public function get()
     {
-        $cache = new Cache();
+        var_dump($this->cache->has('fruits'));
+
+        echo '<hr>';
                 
-        var_dump($cache->get('fruits'));
+        var_dump($this->cache->get('fruits'));
         
         echo '<p><a href="/cache-test/remove">Remove</a></p>';
     }
     
     public function remove()
     {
-        $cache = new Cache();
-
-        $cache->remove('fruits');
+        $this->cache->remove('fruits');
 
         echo '<p><a href="/cache-test">Add Cache</a></p>';
     }
