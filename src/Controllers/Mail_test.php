@@ -2,7 +2,8 @@
 
 namespace App\Controllers;
 
-use Interart\Flywork\Library\Mail\PhpMailerHandler;
+use Interart\Flywork\Library\Mail\Handlers\PhpMailerHandler;
+
 
 class Mail_test extends ApplicationController
 {
@@ -25,6 +26,7 @@ class Mail_test extends ApplicationController
             'use_smtp'    => true,
         ]);
 
+        $mailer->set_debug(true);
         $mailer->set_from('from@email.com', 'Your Name');
         $mailer->set_reply_to('reply@email.com', 'Name');
         $mailer->add_to('john@doe.com');

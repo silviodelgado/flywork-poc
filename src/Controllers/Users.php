@@ -17,7 +17,7 @@ class Users extends ApplicationController
     {
         $viewbag = [
             'title' => 'Users',
-            'users' => $this->entity->FindAll('name', $this->defaul_filter)->result,
+            'users' => $this->entity->FindAll('name', $this->defaul_filter)->result(),
         ];
         return $this->view($viewbag, 'Users/list');
     }
@@ -30,7 +30,7 @@ class Users extends ApplicationController
     public function edit($id)
     {
         $user = $this->entity->FindById($id, $this->defaul_filter);
-        $viewbag = array_merge(['title' => 'Edit User'], $user->result);
+        $viewbag = array_merge(['title' => 'Edit User'], $user->result());
         $this->view($viewbag, 'Users/form');
     }
 

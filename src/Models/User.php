@@ -24,14 +24,20 @@ class User extends Model
         ];
     }
 
+    public function validate()
+    {
+        return true;
+    }
+
     public function find_custom(int $group_id)
     {
         $sql = "SELECT id, name FROM users WHERE group_id = :group";
         $params = [
             ':group' => $group_id
         ];
+        var_dump($this->db->query($sql, $params));
         $this->result = $this->db->query($sql, $params)->fetchAll();
-        $this->rows = count($this->result);
+        $this->num_rows = count($this->result);
         return $this;
     }
 }
