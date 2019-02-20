@@ -14,7 +14,7 @@ class Users extends ApplicationRestController
     
     public function list_all()
     {
-        return $this->JsonResult(true, '', ['data' => $this->entity->find_custom(1)]);
+        return $this->JsonResult(true, '', ['data' => $this->entity->findCustom(1)]);
     }
 
 }

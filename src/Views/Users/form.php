@@ -9,7 +9,7 @@
     <script>
         function save() {
             $.ajax({
-                url: '/rest/users<?php echo empty($id) ? '' : ('/' . $id) ?>',
+                url: '/rest/users/<?php echo $id ?? '' ?>',
                 method: '<?php echo empty($id) ? 'POST' : 'PUT' ?>',
                 data: {
                     'name': $('#name').val(),

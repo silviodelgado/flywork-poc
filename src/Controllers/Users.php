@@ -29,8 +29,9 @@ class Users extends ApplicationController
 
     public function edit($id)
     {
-        $user = $this->entity->FindById($id, $this->defaul_filter);
-        if (!$user->num_rows()) {
+        $user = $this->entity->findById($id, $this->defaul_filter);
+        //if (!$user->numRows()) {
+        if (!$user->hasResult()) {
             throw new \InvalidArgumentException('Invalid user id');
         }
 

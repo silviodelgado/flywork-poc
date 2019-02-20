@@ -29,7 +29,7 @@ class User extends Model
         return true;
     }
 
-    public function find_custom(int $group_id)
+    public function findCustom(int $group_id)
     {
         $sql = "SELECT id, name FROM users WHERE group_id = :group";
         $params = [
