@@ -16,6 +16,6 @@
         }
     },
     "require": {
-        "interart/flywork": "dev-mailer"
+        "interart/flywork": "dev-master"
     }
 }
