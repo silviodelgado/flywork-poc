@@ -7,7 +7,7 @@
         "name": "Silvio Delgado",
         "email": "silviomdelgado@gmail.com",
         "homepage": "https://www.silviodelgado.net",
-        "role": "Architect/Developer"
+        "role": "Developer"
     }],
     "license": "MIT",
     "autoload": {
@@ -16,6 +16,6 @@
         }
     },
     "require": {
-        "interart/flywork": "dev-master"
+        "interart/flywork": "dev-mailer"
     }
 }

@@ -81,9 +81,21 @@ try
     unset($app_settings);
     $kernel->run();
 } catch (BadMethodCallException $ex) {
+    //echo 'BadMethodCallException';
+    if (ENV == 'dev') {
+        var_dump($ex);
+    }
     Kernel::error404();
 } catch (Exception $ex) {
+    //echo 'Exception';
+    if (ENV == 'dev') {
+        var_dump($ex);
+    }
     Kernel::error500();
 } catch (\Throwable $ex) {
+    //echo 'Throwable';
+    if (ENV == 'dev') {
+        var_dump($ex);
+    }
     Kernel::error404();
 }
