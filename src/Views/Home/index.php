@@ -24,6 +24,7 @@
         <li><a href="/home/index">Home (alternative 2)</a></li>
         <li><a href="/home/test">Home Test</a></li>
         <li><a href="/home/other-test">Other Home Test</a></li>
+        <li><a href="/home/date">DateTime</a></li>
         <br>
         <li><a href="/home/invalid">Invalid (throws an Exception)</a></li>
         <br>

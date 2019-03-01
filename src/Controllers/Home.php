@@ -12,7 +12,7 @@ class Home extends ApplicationController
 
     public function index()
     {
-        return $this->view(['success'    => $this->session->flash('success')]);
+        return $this->view(['success' => $this->session->flash('success')]);
     }
 
     public function test()
@@ -28,5 +28,12 @@ class Home extends ApplicationController
     public function invalid()
     {
         throw new \Exception('Injected exception');
+    }
+
+    public function date()
+    {
+        $input = new \Interart\Flywork\Library\Input();
+
+        $this->view(['dt' => $input->getDateTime('dt')], 'Home/dates');
     }
 }
