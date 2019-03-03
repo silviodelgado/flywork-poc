@@ -17,6 +17,18 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
+-- Estrutura da tabela `log_entry`
+--
+
+CREATE TABLE `log_entry` (
+  `id` bigint(11) NOT NULL,
+  `level` varchar(15) NOT NULL,
+  `message` text NOT NULL,
+  `context` text NULL,
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
 -- Extraindo dados da tabela `users`
 --
 
@@ -30,8 +42,22 @@ ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `log_entry`
+--
+ALTER TABLE `log_entry`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `log_entry`
+--
+ALTER TABLE `log_entry`
+  MODIFY `id` bigint(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+  
 COMMIT;
+

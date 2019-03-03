@@ -39,6 +39,7 @@ $app_settings = [
             'server'        => 'localhost',
             'username'      => 'root',
             'password'      => '',
+            'charset'       => 'utf-8',
         ],
     ],
     'database_entry' => 'default',

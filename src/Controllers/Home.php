@@ -36,4 +36,11 @@ class Home extends ApplicationController
 
         $this->view(['dt' => $input->getDateTime('dt')], 'Home/dates');
     }
+
+    public function db_test()
+    {
+        var_dump($this->db);
+        echo '<hr>';
+        var_dump($this->db->query('select database()')->fetchColumn());
+    }
 }

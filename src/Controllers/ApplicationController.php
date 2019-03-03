@@ -36,4 +36,9 @@ abstract class ApplicationController extends Controller
         $this->session->flash('error', 'You do not have permission to access this module.');
         return $this->redirect('/');
     }
+
+    public function _start()
+    {
+
+    }
 }
