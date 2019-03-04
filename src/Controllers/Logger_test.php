@@ -2,9 +2,9 @@
 
 namespace App\Controllers;
 
-use Interart\Flywork\Library\Log\LogManager;
+use Interart\Flywork\Library\Logger;
 
-class Logger extends ApplicationController
+class Logger_test extends ApplicationController
 {
     protected $need_auth = false;
     protected $log;
@@ -16,7 +16,7 @@ class Logger extends ApplicationController
 
     public function _start()
     {
-        $this->log = new LogManager(LogManager::STORAGE_TYPE_DB, $this->db->pdo);
+        $this->log = new Logger(LogManager::STORAGE_TYPE_DB, $this->db->pdo);
     }
     
     public function index()
