@@ -49,6 +49,10 @@
         <li><a href="/cache-test">Cache - Set</a></li>
         <li><a href="/cache-test/get">Cache - Get</a></li>
         <li><a href="/cache-test/remove">Cache - Remove</a></li>
+        <br>
+        <li><a href="/security-test">Security - Password Test</a></li>
+        <li><a href="/security-test/encrypt">Security - Encrypt Test</a></li>
+        <li><a href="/security-test/decrypt">Security - Decrypt Test</a></li>
     </ul>
 
     <hr>

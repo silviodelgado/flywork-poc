@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use Interart\Flywork\Controllers\Controller;
 use Interart\Flywork\Traits\BundleManager;
+use Interart\Flywork\Library\Session;
 
 abstract class ApplicationController extends Controller
 {
@@ -14,6 +15,7 @@ abstract class ApplicationController extends Controller
     public function __construct()
     {
         parent::__construct();
+        $this->session = new Session('', 0, '.flywork.test', true, 'flywork');
     }
 
     protected function prepare_controller()
