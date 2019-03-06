@@ -10,7 +10,7 @@ class Users extends ApplicationController
 
         parent::__construct();
 
-        $this->defaul_filter = ['group_id' => $this->session->user['group_id']];
+        $this->defaul_filter = ['group_id' => $this->session->user->group_id];
     }
 
     public function index()

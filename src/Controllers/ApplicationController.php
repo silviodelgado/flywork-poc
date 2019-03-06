@@ -14,19 +14,18 @@ abstract class ApplicationController extends Controller
 
     public function __construct()
     {
+        $this->session = new Session('', 0, '.flywork.test', true);
         parent::__construct();
-        $this->session = new Session('', 0, '.flywork.test', true, 'flywork');
     }
 
     protected function prepare_controller()
     {
-        $user = $this->session->get('user');
-        $this->is_logged = !empty($user);
-        $this->is_admin = $this->is_logged && isset($user['admin']) && $user['admin'];
-
+        $this->is_logged = !empty($this->session->user);
+        $this->is_admin = $this->is_logged && $this->session->user->admin;
+        
         parent::prepare_controller();
     }
-
+    
     protected function handle_not_authenticated()
     {
         $this->session->flash('error', 'You\'re not logged in or your session has expired.');

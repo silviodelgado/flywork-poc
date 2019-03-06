@@ -4,11 +4,10 @@ namespace App\Controllers;
 
 class Session_test extends ApplicationController
 {
-    protected $session;
+    protected $need_auth = false;
 
     public function __construct()
     {
-        $this->need_auth = false;
         parent::__construct();
     }
 
@@ -23,6 +22,7 @@ class Session_test extends ApplicationController
             'id'       => 1,
             'group_id' => 1,
             'name'     => 'Silvio Delgado',
+            'admin'    => false,
         ]);
         $this->redirect('/session-test/check');
     }
@@ -42,15 +42,11 @@ class Session_test extends ApplicationController
         echo '<hr>'
             . '<a href="/session-test/set-session">Add Session</a><br>'
             . '<a href="/session-test/remove">Remove Session</a>';
-
-        echo '<hr>';
-
-        var_dump($_SESSION['sess_data']);
     }
 
     public function remove()
     {
-        $this->session->clear();
+        $this->session->destroy();
         $this->redirect('/session-test/check');
     }
 }

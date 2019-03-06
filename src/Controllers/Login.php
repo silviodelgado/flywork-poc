@@ -35,6 +35,7 @@ class Login extends ApplicationController
             'id'       => 1,
             'group_id' => 1,
             'name'     => 'Silvio Delgado',
+            'admin'    => false,
         ]);
 
         $return_url = $this->input->get('returnUrl') ?? urlencode('/');
@@ -43,8 +44,9 @@ class Login extends ApplicationController
 
     public function logout()
     {
-        $this->session->clear('user');
+        $this->session->clear();
         $this->session->flash('success', 'Logged out successfully!');
+
         $this->redirect('/');
     }
 }

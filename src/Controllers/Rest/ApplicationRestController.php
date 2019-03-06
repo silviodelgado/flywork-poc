@@ -12,7 +12,7 @@ class ApplicationRestController extends RestController
     {
         parent::__construct();
 
-        $this->defaul_filter = ['group_id' => $this->session->user['group_id']];
+        $this->defaul_filter = ['group_id' => $this->session->user->group_id];
     }
 
     protected function prepare_controller()
