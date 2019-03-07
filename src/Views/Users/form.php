@@ -8,6 +8,10 @@
     <script src="/js/jquery-3.3.1.min.js"></script>
     <script>
         function save() {
+            if (!$('#frm')[0].checkValidity()) {
+                return false;
+            }
+
             $.ajax({
                 url: '/rest/users/<?php echo $id ?? '' ?>',
                 method: '<?php echo empty($id) ? 'POST' : 'PUT' ?>',
@@ -43,7 +47,7 @@
 <body>
 
 <h1><?php echo $title ?></h1>
-<form onsubmit="return false">
+<form id="frm">
     <div>
         <label>Name</label><br>
         <input type="text" id="name" value="<?php echo $name ?? '' ?>" required>
@@ -64,7 +68,7 @@
 
 <hr>
 
-<button onclick="del(2)">Excluir 2</button>
+<button onclick="del(11)">Excluir</button>
 
 </body>
 </html>

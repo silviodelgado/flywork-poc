@@ -3,6 +3,7 @@
 namespace App\Controllers\Rest;
 
 use Interart\Flywork\Controllers\RestController;
+use Interart\Flywork\Library\Session;
 
 class ApplicationRestController extends RestController
 {
@@ -10,9 +11,10 @@ class ApplicationRestController extends RestController
     
     public function __construct()
     {
-        parent::__construct();
-
+        $this->session = new Session('', 0, '.flywork.test', true);
         $this->defaul_filter = ['group_id' => $this->session->user->group_id];
+        
+        parent::__construct();
     }
 
     protected function prepare_controller()
@@ -20,5 +22,10 @@ class ApplicationRestController extends RestController
         $this->is_logged = !empty($this->session->get('user'));
 
         parent::prepare_controller();
+    }
+
+    public function _start()
+    {
+
     }
 }

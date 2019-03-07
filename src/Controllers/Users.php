@@ -17,7 +17,7 @@ class Users extends ApplicationController
     {
         $viewbag = [
             'title' => 'Users',
-            'users' => $this->entity->FindAll('name', $this->defaul_filter)->result(),
+            'users' => $this->entity->FindAll('name', 'ASC', $this->defaul_filter)->result(),
         ];
         return $this->view($viewbag, 'Users/list');
     }
