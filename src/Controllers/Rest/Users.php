@@ -7,7 +7,6 @@ class Users extends ApplicationRestController
     public function __construct()
     {
         $this->entity_name = 'User';
-        $this->order_by = 'name';
         
         parent::__construct();
     }

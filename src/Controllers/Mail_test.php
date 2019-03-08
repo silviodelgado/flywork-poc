@@ -4,7 +4,6 @@ namespace App\Controllers;
 
 use Interart\Flywork\Library\Mail\Handlers\PhpMailerHandler;
 
-
 class Mail_test extends ApplicationController
 {
     protected $need_auth = false;
@@ -23,6 +22,7 @@ class Mail_test extends ApplicationController
             'password'    => 'secret',
             'smtp_secure' => 'tls',
             'use_smtp'    => true,
+            'sendmail'    => false,
         ]);
 
         $mailer->setDebug(true);
