@@ -16,13 +16,14 @@ class Mail_test extends ApplicationController
     public function index()
     {
         $mailer = new PhpMailerHandler([
-            'host'        => 'smtp.email.com',
-            'port'        => 587,
-            'username'    => 'your@email.com',
-            'password'    => 'secret',
-            'smtp_secure' => 'tls',
-            'use_smtp'    => true,
-            'sendmail'    => false,
+            'host'         => 'smtp.email.com',
+            'port'         => 587,
+            'username'     => 'your@email.com',
+            'password'     => 'secret',
+            'smtp_secure'  => 'tls',
+            'use_smtp'     => true,
+            'use_sendmail' => false,
+        ]);
         ]);
 
         $mailer->setDebug(true);
