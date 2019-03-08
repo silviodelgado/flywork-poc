@@ -24,7 +24,6 @@ class Mail_test extends ApplicationController
             'use_smtp'     => true,
             'use_sendmail' => false,
         ]);
-        ]);
 
         $mailer->setDebug(true);
         $mailer->setFrom('you@email.com', 'Your Name');
