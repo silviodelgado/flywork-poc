@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-use Interart\Flywork\Library\Mail\Handlers\PhpMailerHandler;
+use Interart\Flywork\Library\Mail\Adapters\PhpMailerAdapter;
 
 class Mail_test extends ApplicationController
 {
@@ -15,7 +15,7 @@ class Mail_test extends ApplicationController
 
     public function index()
     {
-        $mailer = new PhpMailerHandler([
+        $mailer = new PhpMailerAdapter([
             'host'         => $this->mailer_settings['smtp']['host'] ?? '',
             'port'         => $this->mailer_settings['smtp']['port'] ?? 25,
             'username'     => $this->mailer_settings['smtp']['user'] ?? '',
