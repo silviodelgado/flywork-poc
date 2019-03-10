@@ -18,14 +18,18 @@ The default application namespace should be "App\\", which allows Composer and P
   * index.php
 * /src
   * /Controllers
+    * /Rest
   * /Models
   * /Views
 * /writable
+  * /cache
+  * /logs
+  * /upload
 
 ### Folders and root files explaining
 
 #### /public
-&nbsp; &nbsp; You should put web assets (css, js, img, etc) in this folder. Organize it as you want.<br>
+&nbsp; &nbsp; You should put web assets (css, js, img, etc) in this folder. Organize it as you want, but keep in mind that these files are accessible via HTTP requests.<br>
 &nbsp; &nbsp; The files ```.htaccess``` and ```index.php``` are essential to run the application.
 
 #### /public/bundles
@@ -38,15 +42,15 @@ The default application namespace should be "App\\", which allows Composer and P
 
 #### /src/Controllers
 
-&nbsp; &nbsp; Contains all application controllers.
+&nbsp; &nbsp; Contains all application web controllers.
 
 #### /src/Controllers/Rest
 
-&nbsp; &nbsp; Contains all RESTful controllers.
+&nbsp; &nbsp; Contains all application RESTful controllers.(which will be called through url ```/rest/controller-name/action```)
 
 #### /src/Models
 
-&nbsp; &nbsp; Contains applications models, which handles database entities.
+&nbsp; &nbsp; Contains applications models, which handles database entities and data manipulation.
 
 #### /src/Views
 
@@ -55,7 +59,7 @@ The default application namespace should be "App\\", which allows Composer and P
 #### /writable
 
 &nbsp; &nbsp; This folder is necessary to put all files which is written by framework.<br>
-&nbsp; &nbsp; Should contains ```cache```, ```logs``` and ```upload``` subfolders.
+&nbsp; &nbsp; Should contains ```cache```, ```logs``` and ```upload``` subfolders and be setted as writable.
 
 #### /composer.json
 
