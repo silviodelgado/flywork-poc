@@ -55,7 +55,7 @@ The default application namespace should be "App\\", which allows Composer and P
 #### /writable
 
 &nbsp; &nbsp; This folder is necessary to put all files which is written by framework.<br>
-&nbsp; &nbsp; Should contains ```cache``` and ```upload``` subfolders.
+&nbsp; &nbsp; Should contains ```cache```, ```logs``` and ```upload``` subfolders.
 
 #### /composer.json
 
