@@ -35,9 +35,7 @@ class User extends Model
         $params = [
             ':group' => $group_id
         ];
-        var_dump($this->db->query($sql, $params));
-        $this->result = $this->db->query($sql, $params)->fetchAll();
-        $this->num_rows = count($this->result);
-        return $this;
+        $result = $this->db->query($sql, $params)->fetchAll();
+        return $this->setResult($result);
     }
 }

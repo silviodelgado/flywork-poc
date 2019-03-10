@@ -32,7 +32,7 @@
 // Basic application settings
 
 $app_settings = [
-    'database'       => [
+    'database'        => [
         'default' => [
             'database_type' => 'mysql',
             'database_name' => 'flywork',
@@ -42,13 +42,32 @@ $app_settings = [
             'charset'       => 'utf-8',
         ],
     ],
-    'database_entry' => 'default',
-    'default_route'  => [
+    'database_entry'  => 'default',
+    'default_route'   => [
         'controller' => 'Home',
         'action'     => 'index',
     ],
-    'custom_routes'  => [
+    'custom_routes'   => [
         'test/variation' => 'home/other-test',
+    ],
+    'mailer_settings' => [
+        'smtp'         => [
+            'host'     => 'smtp.email.com',
+            'port'     => 25,
+            'user'     => 'you@email.com',
+            'pass'     => 'secret',
+            'secure'   => true,
+            'use_smtp' => true,
+        ],
+        'use_sendmail' => true,
+        'from'         => [
+            'email' => 'from@email.com',
+            'name'  => 'Your Name',
+        ],
+        'reply'        => [
+            'email' => 'reply@email.com',
+            'name'  => 'Organization',
+        ],
     ],
 ];
 date_default_timezone_set('America/Sao_Paulo');

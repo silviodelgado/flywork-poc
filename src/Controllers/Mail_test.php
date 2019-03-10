@@ -16,18 +16,19 @@ class Mail_test extends ApplicationController
     public function index()
     {
         $mailer = new PhpMailerHandler([
-            'host'         => 'smtp.email.com',
-            'port'         => 587,
-            'username'     => 'your@email.com',
-            'password'     => 'secret',
-            'smtp_secure'  => 'tls',
-            'use_smtp'     => true,
-            'use_sendmail' => false,
+            'host'         => $this->mailer_settings['smtp']['host'] ?? '',
+            'port'         => $this->mailer_settings['smtp']['port'] ?? 25,
+            'username'     => $this->mailer_settings['smtp']['user'] ?? '',
+            'password'     => $this->mailer_settings['smtp']['pass'] ?? '',
+            'smtp_secure'  => $this->mailer_settings['smtp']['secure'] ?? '',
+            'use_smtp'     => $this->mailer_settings['smtp']['use_smtp'] ?? false,
+            'use_sendmail' => $this->mailer_settings['use_sendmail'] ?? false,
         ]);
 
         $mailer->setDebug(true);
-        $mailer->setFrom('you@email.com', 'Your Name');
-        $mailer->setReplyTo('other@email.com', 'Name');
+        $mailer->setFrom($this->mailer_settings['from']['email'], $this->mailer_settings['from']['name']);
+        $mailer->setReplyTo($this->mailer_settings['reply']['email'], $this->mailer_settings['reply']['name']);
+
         $mailer->addTo('john@doe.com');
         $mailer->setSubject('Flywork Mailer Test');
         $html = $this->view([
